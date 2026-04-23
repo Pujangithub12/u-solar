@@ -6,6 +6,7 @@ import About from "./sections/About";
 import Services from "./sections/Services";
 import Contact from "./sections/Contact";
 
+// Main application component
 function App() {
   return (
     <div className="min-h-screen">
