@@ -1,22 +1,61 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { ArrowRight, Zap } from "lucide-react";
-import heroBg from "../assets/image-6.jpeg";
+import heroBg1 from "../assets/image-4.jpeg";
+import heroBg2 from "../assets/image-5.jpeg";
+import heroBg3 from "../assets/image-6.jpeg";
 import heroSmallImg from "../assets/image-4.jpeg";
 
 const Hero = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  const backgroundImages = [heroBg1, heroBg2, heroBg3];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % backgroundImages.length);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [backgroundImages.length]);
+
   return (
     <section
       id="home"
       className="relative min-h-screen flex items-center pt-20 overflow-hidden"
     >
-      {/* Background Image with Blur and Overlay */}
+      {/* Background Image Slider with Blur and Overlay */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={heroBg}
-          alt="Hero Background"
-          className="w-full h-full object-cover"
-        />
+        {backgroundImages.map((img, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              index === currentSlide ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <img
+              src={img}
+              alt={`Hero Background ${index + 1}`}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ))}
         <div className="absolute inset-0 bg-green-950/40 backdrop-brightness-75"></div>
+      </div>
+
+      {/* Slider Indicators */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex gap-3">
+        {backgroundImages.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              index === currentSlide
+                ? "bg-yellow-400 w-8"
+                : "bg-white/50 hover:bg-white/80"
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
       </div>
 
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
