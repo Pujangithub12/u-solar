@@ -40,7 +40,7 @@ const Navbar = () => {
             />
           </div>
           <span className="font-bold text-2xl tracking-tight text-yellow-500">
-            U Solar
+            U Solar <span className="text-base font-semibold text-gray-400">Janda Energy</span>
           </span>
         </a>
 

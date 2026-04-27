@@ -24,7 +24,7 @@ const Footer = () => {
                 />
               </div>
               <span className="font-bold text-xl tracking-tight text-yellow-500">
-                U Solar
+                U Solar <span className="text-sm font-semibold text-gray-400">Janda Energy</span>
               </span>
             </div>
             <p className="text-gray-400 mb-8 leading-relaxed">
