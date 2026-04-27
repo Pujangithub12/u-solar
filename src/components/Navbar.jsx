@@ -39,8 +39,8 @@ const Navbar = () => {
               className="w-12 h-12 object-cover scale-150" 
             />
           </div>
-          <span className="font-bold text-2xl tracking-tight text-yellow-500">
-            U Solar <span className="text-base font-semibold text-green-500">Janda Energy</span>
+          <span className="font-bold text-2xl tracking-tight text-yellow-300">
+            U Solar <span className="text-base font-semibold text-green-400">Janda Energy</span>
           </span>
         </a>
 
