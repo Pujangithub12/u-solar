@@ -83,7 +83,7 @@ const ServiceCard = ({ service, index, isExpanded, onToggle }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
-      className="relative rounded-3xl overflow-hidden border-2 border-gray-200 shadow-lg transition-all duration-300"
+      className="relative rounded-3xl overflow-hidden border-2 border-gray-200 shadow-lg transition-all duration-300 group"
     >
       <div
         onClick={onToggle}
