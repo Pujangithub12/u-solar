@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
+  Sun,
   Wrench,
   ClipboardCheck,
   BarChart3,
   Hammer,
   HardHat,
   Compass,
+  ChevronDown,
 } from "lucide-react";
 import img1 from "../assets/image-1.jpeg";
 import img2 from "../assets/image-2.jpeg";
@@ -81,13 +83,10 @@ const ServiceCard = ({ service, index, isExpanded, onToggle }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
-      className="relative rounded-3xl overflow-hidden border-2 border-gray-200 shadow-lg transition-all duration-300 group isolate"
+      // CHANGE 1: Added 'hover:border-primary-500' for the green outline
+      className="relative rounded-3xl overflow-hidden border-2 border-gray-200 shadow-lg transition-all duration-300 group self-start bg-white hover:border-primary-500"
     >
       <div
-        onClick={(e) => {
-          e.stopPropagation();
-          onToggle(index);
-        }}
         onClick={(e) => {
           e.stopPropagation();
           onToggle(index);
@@ -95,18 +94,25 @@ const ServiceCard = ({ service, index, isExpanded, onToggle }) => {
         className={`relative p-8 min-h-[300px] flex flex-col justify-end cursor-pointer transition-all duration-300 ${
           isExpanded
             ? "bg-gray-900"
-            : "hover:border-primary-500 hover:shadow-2xl hover:shadow-primary-500/10"
+            : "hover:shadow-2xl hover:shadow-primary-500/10"
         }`}
       >
-        <div className="absolute inset-0 z-0 overflow-hidden rounded-3xl">
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <img
             src={service.image}
             alt={service.title}
-            className={`w-full h-full object-cover transition-transform duration-500 will-change-transform ${
+            className={`w-full h-full object-cover transition-transform duration-500 ${
               isExpanded ? "" : "group-hover:scale-110"
             }`}
+            style={{ willChange: "transform" }}
           />
+
+          {/* Existing Dark Gradient */}
           <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-900/80 to-gray-900/40"></div>
+
+          {/* CHANGE 2: Added Green Tint Overlay */}
+          {/* This div is invisible by default (opacity-0) and shows green tint on hover */}
+          <div className="absolute inset-0 bg-primary-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
         </div>
 
         <div className="relative z-10">
@@ -146,8 +152,8 @@ const ServiceCard = ({ service, index, isExpanded, onToggle }) => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="overflow-hidden bg-gray-50"
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="overflow-hidden bg-gray-50 relative z-20"
           >
             <div className="p-8 border-t border-gray-200">
               <p className="text-gray-600 leading-relaxed mb-6">
@@ -158,16 +164,14 @@ const ServiceCard = ({ service, index, isExpanded, onToggle }) => {
                 onClick={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
-                  e.stopPropagation();
                   document.getElementById("contact")?.scrollIntoView({
                     behavior: "smooth",
                   });
                   onToggle(index);
-                  onToggle(index);
                 }}
                 className="inline-flex items-center text-primary-500 font-semibold hover:text-primary-600 transition-colors"
               >
-                Get in touch
+                Read more
                 <svg
                   className="w-4 h-4 ml-2"
                   fill="none"
@@ -195,7 +199,6 @@ const Services = () => {
 
   const handleToggle = (index) => {
     setExpandedIndex((prevIndex) => (prevIndex === index ? null : index));
-    setExpandedIndex((prevIndex) => (prevIndex === index ? null : index));
   };
 
   return (
@@ -212,19 +215,18 @@ const Services = () => {
           </h3>
           <p className="text-gray-600 text-lg">
             From initial site assessment to ongoing maintenance, we provide
-            end-to-end solar power solutions that ensure long-term performance
+            end-to-to solar power solutions that ensure long-term performance
             and efficiency.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto items-start">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {services.map((service, index) => (
             <ServiceCard
               key={service.title}
               service={service}
               index={index}
               isExpanded={expandedIndex === index}
-              onToggle={handleToggle}
               onToggle={handleToggle}
             />
           ))}
