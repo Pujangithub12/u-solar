@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Sun,
   Wrench,
   ClipboardCheck,
   BarChart3,
   Hammer,
   HardHat,
   Compass,
-  ChevronDown,
 } from "lucide-react";
 import img1 from "../assets/image-1.jpeg";
 import img2 from "../assets/image-2.jpeg";
@@ -83,21 +81,24 @@ const ServiceCard = ({ service, index, isExpanded, onToggle }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
-      className="relative rounded-3xl overflow-hidden border-2 border-gray-200 shadow-lg transition-all duration-300"
+      className="relative rounded-3xl overflow-hidden border-2 border-gray-200 shadow-lg transition-all duration-300 group isolate"
     >
       <div
-        onClick={onToggle}
+        onClick={(e) => {
+          e.stopPropagation();
+          onToggle(index);
+        }}
         className={`relative p-8 min-h-[300px] flex flex-col justify-end cursor-pointer transition-all duration-300 ${
           isExpanded
             ? "bg-gray-900"
             : "hover:border-primary-500 hover:shadow-2xl hover:shadow-primary-500/10"
         }`}
       >
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 overflow-hidden rounded-3xl">
           <img
             src={service.image}
             alt={service.title}
-            className={`w-full h-full object-cover transition-transform duration-500 ${
+            className={`w-full h-full object-cover transition-transform duration-500 will-change-transform ${
               isExpanded ? "" : "group-hover:scale-110"
             }`}
           />
@@ -152,14 +153,15 @@ const ServiceCard = ({ service, index, isExpanded, onToggle }) => {
                 href="#contact"
                 onClick={(e) => {
                   e.preventDefault();
+                  e.stopPropagation();
                   document.getElementById("contact")?.scrollIntoView({
                     behavior: "smooth",
                   });
-                  onToggle();
+                  onToggle(index);
                 }}
                 className="inline-flex items-center text-primary-500 font-semibold hover:text-primary-600 transition-colors"
               >
-                Read more
+                Get in touch
                 <svg
                   className="w-4 h-4 ml-2"
                   fill="none"
@@ -186,9 +188,7 @@ const Services = () => {
   const [expandedIndex, setExpandedIndex] = useState(null);
 
   const handleToggle = (index) => {
-    setExpandedIndex((prevExpandedIndex) =>
-      prevExpandedIndex === index ? null : index,
-    );
+    setExpandedIndex((prevIndex) => (prevIndex === index ? null : index));
   };
 
   return (
@@ -205,19 +205,19 @@ const Services = () => {
           </h3>
           <p className="text-gray-600 text-lg">
             From initial site assessment to ongoing maintenance, we provide
-            end-to-to solar power solutions that ensure long-term performance
+            end-to-end solar power solutions that ensure long-term performance
             and efficiency.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto items-start">
           {services.map((service, index) => (
             <ServiceCard
               key={service.title}
               service={service}
               index={index}
               isExpanded={expandedIndex === index}
-              onToggle={() => handleToggle(index)}
+              onToggle={handleToggle}
             />
           ))}
         </div>
