@@ -88,6 +88,10 @@ const ServiceCard = ({ service, index, isExpanded, onToggle }) => {
           e.stopPropagation();
           onToggle(index);
         }}
+        onClick={(e) => {
+          e.stopPropagation();
+          onToggle(index);
+        }}
         className={`relative p-8 min-h-[300px] flex flex-col justify-end cursor-pointer transition-all duration-300 ${
           isExpanded
             ? "bg-gray-900"
@@ -154,9 +158,11 @@ const ServiceCard = ({ service, index, isExpanded, onToggle }) => {
                 onClick={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
+                  e.stopPropagation();
                   document.getElementById("contact")?.scrollIntoView({
                     behavior: "smooth",
                   });
+                  onToggle(index);
                   onToggle(index);
                 }}
                 className="inline-flex items-center text-primary-500 font-semibold hover:text-primary-600 transition-colors"
@@ -189,6 +195,7 @@ const Services = () => {
 
   const handleToggle = (index) => {
     setExpandedIndex((prevIndex) => (prevIndex === index ? null : index));
+    setExpandedIndex((prevIndex) => (prevIndex === index ? null : index));
   };
 
   return (
@@ -217,6 +224,7 @@ const Services = () => {
               service={service}
               index={index}
               isExpanded={expandedIndex === index}
+              onToggle={handleToggle}
               onToggle={handleToggle}
             />
           ))}
