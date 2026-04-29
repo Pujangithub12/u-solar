@@ -236,24 +236,7 @@ const ServiceDetail = () => {
           </motion.div>
         </div>
 
-        {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="mt-12 bg-primary-500 rounded-3xl p-8 md:p-12 text-center text-white shadow-lg"
-        >
-          <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-          <p className="text-primary-100 text-lg mb-8 max-w-2xl mx-auto">
-            Contact us today to learn more about our {service.title.toLowerCase()} services and how we can help you achieve your solar energy goals.
-          </p>
-          <Link
-            to="/contact"
-            className="inline-block bg-white text-primary-500 font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors"
-          >
-            Contact Us Today
-          </Link>
-        </motion.div>
+        
       </div>
     </div>
   );
