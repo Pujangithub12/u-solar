@@ -1,15 +1,33 @@
 import React from "react";
 import { Facebook, Instagram, MapPin, Mail, Phone } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Services", href: "#services" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", hash: "home" },
+  { name: "About", hash: "about" },
+  { name: "Services", hash: "services" },
+  { name: "Contact", hash: "contact" },
 ];
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavClick = (e, hash) => {
+    e.preventDefault();
+    if (location.pathname === '/') {
+      const el = document.getElementById(hash);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/');
+      setTimeout(() => {
+        const el = document.getElementById(hash);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 150);
+    }
+  };
+
   return (
     <footer className="bg-gray-950 text-white pt-24 pb-12 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6">
@@ -52,7 +70,8 @@ const Footer = () => {
               {navLinks.map((link) => (
                 <li key={link.name}>
                   <a
-                    href={link.href}
+                    href={`/#${link.hash}`}
+                    onClick={(e) => handleNavClick(e, link.hash)}
                     className="text-gray-400 hover:text-primary-500 transition-colors"
                   >
                     {link.name}
@@ -80,7 +99,7 @@ const Footer = () => {
                   <Mail className="w-5 h-5" />
                 </div>
                 <a
-                  href={`mailto:Usolarjanda1234@gmail.com`}
+                  href="mailto:Usolarjanda1234@gmail.com"
                   className="hover:text-primary-500 transition-colors"
                 >
                   Usolarjanda1234@gmail.com
@@ -91,7 +110,7 @@ const Footer = () => {
                   <Phone className="w-5 h-5" />
                 </div>
                 <a
-                  href={`tel:+977-01-5111032`}
+                  href="tel:+977-01-5111032"
                   className="hover:text-primary-500 transition-colors"
                 >
                   +977-01-5111032
@@ -102,7 +121,7 @@ const Footer = () => {
                   <Phone className="w-5 h-5" />
                 </div>
                 <a
-                  href={`tel:+977-9844009664`}
+                  href="tel:+977-9844009664"
                   className="hover:text-primary-500 transition-colors"
                 >
                   +977-9844009664
