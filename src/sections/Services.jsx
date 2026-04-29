@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   Sun,
   Wrench,
@@ -159,16 +160,8 @@ const ServiceCard = ({ service, index, isExpanded, onToggle }) => {
               <p className="text-gray-600 leading-relaxed mb-6">
                 {service.details}
               </p>
-              <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  document.getElementById("contact")?.scrollIntoView({
-                    behavior: "smooth",
-                  });
-                  onToggle(index);
-                }}
+              <Link
+                to={`/service/${service.title.toLowerCase().replace(/\s+/g, '-')}`}
                 className="inline-flex items-center text-primary-500 font-semibold hover:text-primary-600 transition-colors"
               >
                 Read more
@@ -185,7 +178,7 @@ const ServiceCard = ({ service, index, isExpanded, onToggle }) => {
                     d="M17 8l4 4m0 0l-4 4m4-4H3"
                   />
                 </svg>
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}
