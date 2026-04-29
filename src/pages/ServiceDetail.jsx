@@ -147,9 +147,7 @@ const ServiceDetail = () => {
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Service Not Found</h1>
-          <Link to="/services" className="text-primary-500 hover:text-primary-600 font-semibold">
-            ← Back to Services
-          </Link>
+          
         </div>
       </div>
     );
