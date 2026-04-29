@@ -1,7 +1,7 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, CheckCircle, Sun, Wrench, ClipboardCheck, BarChart3, Hammer, HardHat, Compass } from "lucide-react";
+import { CheckCircle, Sun, Wrench, ClipboardCheck, BarChart3, Hammer, HardHat, Compass } from "lucide-react";
 import img1 from "../assets/image-1.jpeg";
 import img2 from "../assets/image-2.jpeg";
 import img3 from "../assets/image-3.jpeg";
@@ -167,13 +167,6 @@ const ServiceDetail = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-900/80 to-gray-900/40"></div>
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center text-white px-6">
-            <Link
-              to="/services"
-              className="inline-flex items-center text-white/80 hover:text-white mb-6 transition-colors"
-            >
-              <ArrowLeft className="w-5 h-5 mr-2" />
-              Back to Services
-            </Link>
             <div className="w-20 h-20 bg-primary-500/20 backdrop-blur-md rounded-2xl flex items-center justify-center text-primary-400 mx-auto mb-6">
               <Icon className="w-10 h-10" />
             </div>
