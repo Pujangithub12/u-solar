@@ -8,11 +8,15 @@ import Services from "./sections/Services";
 import Team from "./sections/Team";
 import Contact from "./sections/Contact";
 import ServiceDetail from "./pages/ServiceDetail";
+import ScrollToTop from "./components/ScrollToTop";
+
+
 
 // Main application component
 function App() {
   return (
     <BrowserRouter>
+    <ScrollToTop/>
       <Routes>
         <Route path="/" element={
           <div className="min-h-screen">
