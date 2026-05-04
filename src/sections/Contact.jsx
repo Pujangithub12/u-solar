@@ -94,7 +94,7 @@ const Contact = () => {
                     +977-01-5111032
                   </p>
                   <p className="text-gray-600 group-hover:text-gray-900 transition-colors">
-                    +977-9844009664
+                    +977-9765545315
                   </p>
                 </div>
               </div>
@@ -175,7 +175,7 @@ const Contact = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="+977-9844009664"
+                    placeholder="+977-98XXXXXXXX"
                     className={`w-full bg-gray-50 border-2 ${
                       errors.phone ? "border-red-500" : "border-gray-100"
                     } rounded-2xl px-5 py-4 text-gray-900 focus:outline-none focus:border-primary-500 focus:bg-white transition-all shadow-inner`}
