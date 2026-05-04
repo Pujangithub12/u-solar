@@ -43,7 +43,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
-      const phoneNumber = "9844009664"; // Use mobile number, strip non-digits
+      const phoneNumber = "9765545315"; // Use mobile number, strip non-digits
       const text = `Hello U Solar Janda Energy, I'd like to enquire about your solar services.%0A%0AName: ${formData.name}%0AEmail: ${formData.email}%0APhone: ${formData.phone}%0ASubject: ${formData.subject}%0AMessage: ${formData.message}`;
       const whatsappUrl = `https://wa.me/${phoneNumber}?text=${text}`;
       window.open(whatsappUrl, "_blank");
