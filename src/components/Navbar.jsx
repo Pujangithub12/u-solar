@@ -71,7 +71,7 @@ const Navbar = () => {
               U Solar
             </span>
             <span className="text-base font-semibold text-green-400">
-              Janda Energy
+              JANDA ENERGY
             </span>
           </div>
         </a>
