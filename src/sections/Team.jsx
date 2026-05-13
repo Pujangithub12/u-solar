@@ -12,7 +12,7 @@ const teamMembers = [
     role: "Director",
   },
   {
-    name: "Sanjay Kumar Jha",
+    name: "Sanjeev Kumar Jha",
     role: "Director",
   },
 ];
