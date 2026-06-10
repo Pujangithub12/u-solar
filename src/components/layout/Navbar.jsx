@@ -93,7 +93,7 @@ const Navbar = () => {
           ))}
 
           {/* Auth Button */}
-          {user ? (
+          {user && (
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2 px-3 py-1.5 bg-green-50 text-green-700 rounded-full border border-green-100">
                 <User size={16} />
@@ -109,13 +109,6 @@ const Navbar = () => {
                 <LogOut size={20} />
               </button>
             </div>
-          ) : (
-            <button
-              onClick={() => navigate("/login")}
-              className="bg-green-600 text-white px-5 py-2 rounded-lg font-semibold hover:bg-green-700 transition-all shadow-md active:scale-95"
-            >
-              Login
-            </button>
           )}
         </div>
 
@@ -142,24 +135,13 @@ const Navbar = () => {
             </a>
           ))}
 
-          {user ? (
+          {user && (
             <button
               onClick={logout}
               className="flex items-center gap-3 text-red-600 font-bold text-xl py-4"
             >
               <LogOut size={24} />
               Logout
-            </button>
-          ) : (
-            <button
-              onClick={() => {
-                setIsOpen(false);
-                navigate("/login");
-              }}
-              className="flex items-center gap-3 text-green-600 font-bold text-xl py-4"
-            >
-              <User size={24} />
-              Login
             </button>
           )}
         </div>
