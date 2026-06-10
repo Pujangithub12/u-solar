@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-
-const API_URL = "http://localhost:5000/api";
+import API_URL from "../config";
 
 const ProjectDetails = () => {
   const { id } = useParams();

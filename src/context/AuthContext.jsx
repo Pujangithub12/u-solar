@@ -1,8 +1,8 @@
 // context/AuthContext.jsx
 import { createContext, useContext, useState, useEffect } from "react";
+import API_URL from "../config";
 
 const AuthContext = createContext(null);
-const API_URL = "http://localhost:5000/api";
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);

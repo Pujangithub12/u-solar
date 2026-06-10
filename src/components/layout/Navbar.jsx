@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, LogOut, User } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
-import { cn } from "../utils/cn";
-import logo from "../assets/logo.png";
+import { useAuth } from "../../context/AuthContext";
+import { cn } from "../../utils/cn";
+import logo from "../../assets/logo.png";
 
 const navLinks = [
   { name: "Home", hash: "home" },
