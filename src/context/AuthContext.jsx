@@ -50,12 +50,13 @@ export const AuthProvider = ({ children }) => {
       body: JSON.stringify({ email, password }),
     });
 
+    const data = await res.json();
+
     if (!res.ok) {
-      const error = await res.json();
-      throw new Error(error.error);
+      throw new Error(data.error || "Login failed");
     }
 
-    const { token, user } = await res.json();
+    const { token, user } = data;
     localStorage.setItem("token", token);
     localStorage.setItem("user", JSON.stringify(user));
     setUser(user);

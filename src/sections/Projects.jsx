@@ -109,13 +109,13 @@ const Projects = () => {
         body: formData, // FormData for file uploads
       });
 
+      const data = await res.json();
+
       if (!res.ok) {
-        const err = await res.json();
-        throw new Error(err.error || "Failed to add project");
+        throw new Error(data.error || "Failed to add project");
       }
 
-      const newProject = await res.json();
-      setProjects((prev) => [...prev, newProject]);
+      setProjects((prev) => [...prev, data]);
       setShowAddModal(false);
       alert("Project added successfully!");
     } catch (err) {
