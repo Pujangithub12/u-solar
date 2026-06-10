@@ -84,8 +84,7 @@ const ServiceCard = ({ service, index, isExpanded, onToggle }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
-      // CHANGE 1: Added 'hover:border-primary-500' for the green outline
-      className="relative rounded-3xl overflow-hidden border-2 border-gray-200 shadow-lg transition-all duration-300 group self-start bg-white hover:border-primary-500"
+      className="relative rounded-xl overflow-hidden border-2 border-gray-200 shadow-lg transition-all duration-300 group self-start bg-white hover:border-primary-500"
     >
       <div
         onClick={(e) => {
@@ -111,8 +110,6 @@ const ServiceCard = ({ service, index, isExpanded, onToggle }) => {
           {/* Existing Dark Gradient */}
           <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-900/80 to-gray-900/40"></div>
 
-          {/* CHANGE 2: Added Green Tint Overlay */}
-          {/* This div is invisible by default (opacity-0) and shows green tint on hover */}
           <div className="absolute inset-0 bg-primary-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
         </div>
 

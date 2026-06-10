@@ -1,15 +1,19 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { User } from "lucide-react";
+import damayantiImg from "../assets/directors/damyanti-img.jpg";
+import kishorImg from "../assets/directors/kishor-img.jpg";
 
 const teamMembers = [
   {
     name: "Damayanti Paudel",
     role: "Chairman",
+    image: damayantiImg,
   },
   {
     name: "Kishor Neupane",
     role: "Director",
+    image: kishorImg,
   },
   {
     name: "Sanjiv Kumar Jha",
@@ -24,10 +28,20 @@ const TeamCard = ({ member, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.15 }}
-      className="relative p-8 rounded-3xl bg-white border-2 border-gray-200 shadow-lg hover:border-primary-500 hover:shadow-2xl hover:shadow-primary-500/10 transition-all group text-center"
+      className="relative p-8 rounded-xl bg-white border-2 border-gray-200 shadow-lg hover:border-primary-500 hover:shadow-2xl hover:shadow-primary-500/10 transition-all group text-center"
     >
-      <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-primary-500 to-yellow-500 rounded-full flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform">
-        <User className="w-12 h-12" />
+      <div className="w-24 h-24 mx-auto mb-6 overflow-hidden rounded-full border-2 border-primary-500 shadow-md group-hover:scale-110 transition-transform">
+        {member.image ? (
+          <img
+            src={member.image}
+            alt={member.name}
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-primary-500 to-yellow-500 flex items-center justify-center text-white">
+            <User className="w-12 h-12" />
+          </div>
+        )}
       </div>
       <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
         {member.name}
