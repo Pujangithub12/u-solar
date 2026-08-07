@@ -8,8 +8,8 @@ import heroBg3 from "../assets/shared-img/image-6.jpeg";
 const backgroundImages = [heroBg1, heroBg2, heroBg3];
 
 const stats = [
-  { value: "100+", label: "Projects Completed" },
-  { value: "50+", label: "Happy Clients" },
+  { value: "25+", label: "Projects Completed" },
+  { value: "40+", label: "Happy Clients" },
   { value: "99%", label: "System Uptime" },
 ];
 
@@ -27,7 +27,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative h-[650px] flex items-center pt-32 pb-12 overflow-hidden bg-slate-950"
+      className="relative h-auto md:h-[650px] flex items-center pt-20 md:pt-32 pb-20 md:pb-12 overflow-hidden bg-slate-950"
     >
       {/* Background Image Slider */}
       <div className="absolute inset-0 z-0">
@@ -51,24 +51,24 @@ const Hero = () => {
       </div>
 
       {/* Slider Indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
+      <div className="absolute bottom-2 md:bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
         {backgroundImages.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`h-3 rounded-full transition-all duration-300 ${
+            className={`h-2 md:h-3 rounded-full transition-all duration-300 ${
               index === currentSlide
-                ? "bg-primary-400 w-8"
-                : "bg-white/40 hover:bg-white/70 w-3"
+                ? "bg-primary-400 w-6 md:w-8"
+                : "bg-white/40 hover:bg-white/70 w-2 md:w-3"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-        <div className="max-w-2xl">
-          <div className="inline-flex items-center gap-2 bg-primary-500/10 border border-primary-400/20 backdrop-blur px-4 py-2 rounded-full text-amber-300 text-sm font-semibold mb-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full flex flex-col items-center justify-center">
+        <div className="max-w-2xl text-center">
+          <div className="inline-flex items-center gap-2 bg-primary-500/10 border border-primary-400/20 backdrop-blur px-4 py-2 rounded-full text-amber-300 text-sm font-semibold mb-4 md:mb-8 mt-6 md:mt-0">
             <Sun className="w-4 h-4" />
             <span>Nepal's Trusted Solar Energy Partner</span>
           </div>
@@ -86,7 +86,7 @@ const Hero = () => {
             Nepal — cutting energy costs while powering a cleaner future.
           </p>
 
-          <div className="flex flex-wrap gap-4 mb-14">
+          <div className="flex flex-wrap gap-4 mb-14 justify-center">
             <Link
               to="/contact"
               className="group bg-gradient-to-r from-primary-600 to-emerald-600 hover:from-primary-500 hover:to-emerald-500 text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 shadow-lg shadow-primary-900/40 transition-all"
@@ -102,7 +102,7 @@ const Hero = () => {
             </Link>
           </div>
 
-          <div className="grid grid-cols-3 gap-6 max-w-lg border-t border-white/10 pt-8">
+          <div className="grid grid-cols-3 gap-6 justify-center border-t border-white/10 pt-8">
             {stats.map((stat) => (
               <div key={stat.label}>
                 <div className="text-3xl font-extrabold text-primary-400 mb-1">
