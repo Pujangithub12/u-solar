@@ -35,6 +35,31 @@ import sunmai2 from "../assets/sunmai-img/sunmai-2.jpeg";
 import sunmai3 from "../assets/sunmai-img/sunmai-3.jpeg";
 import sunmai4 from "../assets/sunmai-img/sunmai-4.jpeg";
 
+import aster1 from "../assets/india project/industrial/aster-medcity-1.jpg";
+import aster2 from "../assets/india project/industrial/aster-medcity-2.jpg";
+import aster3 from "../assets/india project/industrial/aster-medcity-3.jpg";
+
+import maduraCoats from "../assets/india project/industrial/madura-coats.webp";
+import shreeCement from "../assets/india project/industrial/shree-cement.webp";
+import coalIndiaImg from "../assets/india project/government/COAL-INDIA-LIMITED.webp";
+
+import bigBasketImg from "../assets/india project/commercial/Big-Basket.webp";
+import decathlonImg from "../assets/india project/commercial/Decathlon.webp";
+import dmartImg from "../assets/india project/commercial/Dmart.webp";
+import indiQubeImg from "../assets/india project/commercial/Kochiimetro.webp";
+
+import galaxy1 from "../assets/Galaxy Garden/galaxy (1).jpeg";
+import galaxy2 from "../assets/Galaxy Garden/galaxy (2).jpeg";
+import galaxy3 from "../assets/Galaxy Garden/galaxy (3).jpeg";
+
+import holiday1 from "../assets/Hotel Holiday Inn Express/hotel-holiday (1).jpeg";
+import holiday2 from "../assets/Hotel Holiday Inn Express/hotel-holiday (2).jpg";
+import holiday3 from "../assets/Hotel Holiday Inn Express/hotel-holiday (3).jpeg";
+import holiday4 from "../assets/Hotel Holiday Inn Express/hotel-holiday (4).jpg";
+
+import college1 from "../assets/College of Medical Science/college-medical (1).jpeg";
+import college2 from "../assets/College of Medical Science/college-medical (2).jpeg";
+
 export const projectsData = {
   commercial: [
     {
@@ -63,6 +88,7 @@ export const projectsData = {
       savings: "40% monthly",
       status: "Operational",
       category: "commercial",
+      country: "Nepal",
     },
     {
       id: 9,
@@ -81,6 +107,7 @@ export const projectsData = {
       savings: "—",
       status: "Operational",
       category: "commercial",
+      country: "Nepal",
     },
     {
       id: 10,
@@ -88,8 +115,8 @@ export const projectsData = {
       location: "Bharatpur, Chitwan",
       capacity: "500 kWp",
       type: "Rooftop Installation",
-      image: placeholderImage,
-      gallery: [placeholderImage],
+      image: college1,
+      gallery: [college1, college2],
       detailedDescription:
         "A 500 kWp rooftop solar installation at the College of Medical Sciences, Bharatpur, Chitwan, delivering renewable power to support the institution's campus and hospital facilities.",
       year: "Ongoing",
@@ -99,6 +126,7 @@ export const projectsData = {
       savings: "—",
       status: "Under Construction",
       category: "commercial",
+      country: "Nepal",
     },
     {
       id: 11,
@@ -106,8 +134,8 @@ export const projectsData = {
       location: "Yagyapuri, Bharatpur",
       capacity: "100 kWp",
       type: "Rooftop Installation",
-      image: placeholderImage,
-      gallery: [placeholderImage],
+      image: galaxy1,
+      gallery: [galaxy1, galaxy2, galaxy3],
       detailedDescription:
         "A 100 kWp rooftop solar installation at Galaxy Garden Resort, Yagyapuri, Bharatpur, reducing the resort's reliance on grid electricity through on-site solar generation.",
       year: "Ongoing",
@@ -117,6 +145,7 @@ export const projectsData = {
       savings: "—",
       status: "Under Construction",
       category: "commercial",
+      country: "Nepal",
     },
     {
       id: 12,
@@ -124,8 +153,8 @@ export const projectsData = {
       location: "Naxal, Kathmandu",
       capacity: "60 kWp",
       type: "Rooftop Installation",
-      image: placeholderImage,
-      gallery: [placeholderImage],
+      image: holiday1,
+      gallery: [holiday1, holiday2, holiday3, holiday4],
       detailedDescription:
         "A 60 kWp rooftop solar installation at Hotel Holiday Inn Express, Naxal, Kathmandu, providing clean, reliable power for the hotel's operations.",
       year: "2026",
@@ -135,6 +164,83 @@ export const projectsData = {
       savings: "—",
       status: "Operational",
       category: "commercial",
+      country: "Nepal",
+    },
+    {
+      id: 25,
+      title: "Big Basket Solar Project",
+      location: "PAN India",
+      capacity: "3.8 MWp",
+      type: "Rooftop Installation",
+      image: bigBasketImg,
+      gallery: [bigBasketImg],
+      detailedDescription:
+        "With rapid growth and expansion big basket faced escalating energy consumption. Big Basket decided to go Solar in their warehouses to cut down on operational costs and comply with ESG regulations. U-Solar helped Big Basket to transition their energy consumption to solar energy of their warehouses PAN India.",
+      year: "2024",
+      client: "Big Basket",
+      panels: "—",
+      inverter: "—",
+      savings: "—",
+      status: "Operational",
+      category: "commercial",
+      country: "India",
+    },
+    {
+      id: 26,
+      title: "Decathlon Solar Project",
+      location: "PAN India",
+      capacity: "803 kWp",
+      type: "Rooftop Installation",
+      image: decathlonImg,
+      gallery: [decathlonImg],
+      detailedDescription:
+        "Decathlon being one of the sports retail chain in India decided to adopt solar to support the ESG goals of the company. The company wanted to explore options with lesser capital expenditure. U-Solar provided Decathlon with zero investment option (OPEX) and energy price much lower than the standard DISCOM rates. This helped decathlon with quick transition to solar for 8 of their retail outlets.",
+      year: "2024",
+      client: "Decathlon",
+      panels: "—",
+      inverter: "—",
+      savings: "—",
+      status: "Operational",
+      category: "commercial",
+      country: "India",
+    },
+    {
+      id: 27,
+      title: "IndiQube Solar Project",
+      location: "Karnataka",
+      capacity: "2.6 MWp",
+      type: "Rooftop Installation",
+      image: indiQubeImg,
+      gallery: [indiQubeImg],
+      detailedDescription:
+        "IndiQube is an end-to-end office space provider based out of Bengaluru, providing innovative and cost-effective solutions to businesses. IndiQube decided to transform themselves to prosumers by adopting solar for their office & other buildings. U-Solar helped IndiQube to achieve their vision and installed cost-effective solar solutions across multiple sites across Bengaluru.",
+      year: "2024",
+      client: "IndiQube",
+      panels: "—",
+      inverter: "—",
+      savings: "—",
+      status: "Operational",
+      category: "commercial",
+      country: "India",
+    },
+    {
+      id: 28,
+      title: "DMart Solar Project",
+      location: "PAN India",
+      capacity: "2 MWp",
+      type: "Rooftop Installation",
+      image: dmartImg,
+      gallery: [dmartImg],
+      detailedDescription:
+        "DMart is a leading supermarket chain in India, offering a wide range of home and personal products at competitive prices. U-Solar helped DMart to transition to affordable, reliable and clean power by installing 2MWp of Rooftop Solar which saves them in energy bills every year.",
+      year: "2024",
+      client: "DMart",
+      panels: "—",
+      inverter: "—",
+      savings: "—",
+      status: "Operational",
+      category: "commercial",
+      country: "India",
     },
   ],
   industrial: [
@@ -155,6 +261,7 @@ export const projectsData = {
       savings: "45% monthly",
       status: "736 kWp Completed; 240 kWp Ongoing",
       category: "industrial",
+      country: "Nepal",
     },
     {
       id: 4,
@@ -173,6 +280,64 @@ export const projectsData = {
       savings: "47,000/monthly",
       status: "Completed (April 2024)",
       category: "industrial",
+      country: "Nepal",
+    },
+    {
+      id: 22,
+      title: "Aster Medicity Solar PV Project",
+      location: "Kerala",
+      capacity: "8.5 MWp",
+      type: "Ground-Mounted System",
+      image: aster1,
+      gallery: [aster1, aster2, aster3],
+      detailedDescription:
+        "Aster Medicity is a leading hospital chain in India. Aster opted for a 8.5 MWp ground mount solar to reduce its operational costs and carbon footprint. U-Solar was able to understand their requirements and tailor a clean energy pathway for their energy transition over the state.",
+      year: "2024",
+      client: "Aster Medicity",
+      panels: "—",
+      inverter: "—",
+      savings: "—",
+      status: "Operational",
+      category: "industrial",
+      country: "India",
+    },
+    {
+      id: 23,
+      title: "Shree Cement Solar Project",
+      location: "Chhattisgarh",
+      capacity: "17 MWp",
+      type: "Ground-Mounted System",
+      image: shreeCement,
+      gallery: [shreeCement],
+      detailedDescription:
+        "Shree Cement, being one among the main players in the Indian Cement industry decided to reduce their carbon footprint by embracing clean energy for their operations. U-Solar designed and executed a Solar Project of 17 MWp using latest cutting-edge technology, which ensures maximum production and ROI on their investments.",
+      year: "2024",
+      client: "Shree Cement",
+      panels: "—",
+      inverter: "—",
+      savings: "—",
+      status: "Operational",
+      category: "industrial",
+      country: "India",
+    },
+    {
+      id: 24,
+      title: "Madura Coats Solar Project",
+      location: "Tamil Nadu",
+      capacity: "3.5 MWp",
+      type: "Rooftop Installation",
+      image: maduraCoats,
+      gallery: [maduraCoats],
+      detailedDescription:
+        "Madura Coats, one of the large-scale textile manufactures in South India partnered with U-Solar to reduce their energy bills by adopting solar energy. A total of 3.5 MWp Rooftop Solar capacity was commissioned in two phases, which brought down the energy bills significantly which reflected as an excellent Return of Investment.",
+      year: "2024",
+      client: "Madura Coats",
+      panels: "—",
+      inverter: "—",
+      savings: "—",
+      status: "Operational",
+      category: "industrial",
+      country: "India",
     },
   ],
   utility: [
@@ -193,6 +358,26 @@ export const projectsData = {
       savings: "Grid Supply",
       status: "Completed (Dec 2023)",
       category: "utility",
+      country: "Nepal",
+    },
+    {
+      id: 29,
+      title: "Coal India Limited Solar Project",
+      location: "West Bengal",
+      capacity: "42 MWp",
+      type: "Utility-Scale Solar Farm",
+      image: coalIndiaImg,
+      gallery: [coalIndiaImg],
+      detailedDescription:
+        "Coal India Limited is a PSU under Government of India and is one of the major producers of coal in India. As part of their sustainability and net-zero pathway, Coal India is adopting renewable energy to offset their carbon footprint. U-Solar designed and implemented a 42 MWp utility-scale solar project to support their renewable energy goals.",
+      year: "2024",
+      client: "Coal India Limited",
+      panels: "—",
+      inverter: "—",
+      savings: "Grid Supply",
+      status: "Operational",
+      category: "utility",
+      country: "India",
     },
     {
       id: 8,
@@ -211,6 +396,7 @@ export const projectsData = {
       savings: "Grid Supply",
       status: "Completed",
       category: "utility",
+      country: "Nepal",
     },
     {
       id: 13,
@@ -229,6 +415,7 @@ export const projectsData = {
       savings: "Grid Supply",
       status: "Under Construction",
       category: "utility",
+      country: "Nepal",
     },
     {
       id: 14,
@@ -247,6 +434,7 @@ export const projectsData = {
       savings: "Grid Supply",
       status: "Under Construction",
       category: "utility",
+      country: "Nepal",
     },
     {
       id: 15,
@@ -265,6 +453,7 @@ export const projectsData = {
       savings: "Captive Supply",
       status: "Under Construction",
       category: "utility",
+      country: "Nepal",
     },
   ],
   transmission: [
@@ -285,6 +474,7 @@ export const projectsData = {
       savings: "—",
       status: "Completed",
       category: "transmission",
+      country: "Nepal",
     },
     {
       id: 17,
@@ -303,6 +493,7 @@ export const projectsData = {
       savings: "—",
       status: "Completed",
       category: "transmission",
+      country: "Nepal",
     },
     {
       id: 18,
@@ -321,6 +512,7 @@ export const projectsData = {
       savings: "—",
       status: "Completed",
       category: "transmission",
+      country: "Nepal",
     },
     {
       id: 19,
@@ -339,6 +531,7 @@ export const projectsData = {
       savings: "—",
       status: "Completed",
       category: "transmission",
+      country: "Nepal",
     },
     {
       id: 20,
@@ -357,6 +550,7 @@ export const projectsData = {
       savings: "—",
       status: "Design / Planning",
       category: "transmission",
+      country: "Nepal",
     },
     {
       id: 21,
@@ -375,6 +569,7 @@ export const projectsData = {
       savings: "—",
       status: "Design / Planning",
       category: "transmission",
+      country: "Nepal",
     },
   ],
 };

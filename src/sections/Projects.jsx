@@ -11,9 +11,13 @@ const tabs = [
 
 const Projects = () => {
   const [activeTab, setActiveTab] = useState("commercial");
+  const [activeCountry, setActiveCountry] = useState("nepal");
   const navigate = useNavigate();
 
-  const projects = projectsData[activeTab] || [];
+  const allProjects = projectsData[activeTab] || [];
+  const projects = allProjects.filter(
+    (project) => project.country.toLowerCase() === activeCountry.toLowerCase()
+  );
 
   const handleViewDetails = (project) => {
     navigate(`/projects/${project.id}`);
@@ -30,13 +34,14 @@ const Projects = () => {
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Explore our portfolio of successful solar installations across
-            Nepal. From commercial rooftops to utility-scale solar farms, we
+            Nepal and India. From commercial rooftops to utility-scale solar farms, we
             deliver reliable renewable energy solutions.
           </p>
         </div>
 
-        {/* Category Tabs */}
-        <div className="flex items-center justify-center mb-12">
+        {/* Category Tabs and Country Toggle */}
+        <div className="flex items-center justify-between mb-12 gap-6">
+          {/* Category Tabs */}
           <div className="flex bg-white rounded-lg shadow-sm p-1.5 border border-gray-200">
             {tabs.map((tab) => (
               <button
@@ -52,6 +57,26 @@ const Projects = () => {
                 `}
               >
                 {tab.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Country Toggle */}
+          <div className="flex bg-white rounded-lg shadow-sm p-1.5 border border-gray-200">
+            {["Nepal", "India"].map((country) => (
+              <button
+                key={country}
+                onClick={() => setActiveCountry(country.toLowerCase())}
+                className={`
+                  px-6 py-2.5 rounded-md text-sm font-bold transition-all duration-300
+                  ${
+                    activeCountry === country.toLowerCase()
+                      ? "bg-black text-white shadow-md"
+                      : "text-gray-500 hover:text-black hover:bg-gray-50"
+                  }
+                `}
+              >
+                {country}
               </button>
             ))}
           </div>
@@ -149,7 +174,9 @@ const Projects = () => {
         {projects.length === 0 && (
           <div className="text-center py-16">
             <p className="text-gray-500 text-lg">
-              No projects available in this category yet.
+              {activeCountry === "india"
+                ? "India projects coming soon! Stay tuned for updates."
+                : "No projects available in this category yet."}
             </p>
           </div>
         )}
