@@ -27,7 +27,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center pt-32 pb-24 overflow-hidden bg-slate-950"
+      className="relative h-[650px] flex items-center pt-32 pb-12 overflow-hidden bg-slate-950"
     >
       {/* Background Image Slider */}
       <div className="absolute inset-0 z-0">
@@ -73,7 +73,7 @@ const Hero = () => {
             <span>Nepal's Trusted Solar Energy Partner</span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.05] mb-6">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-[1.05] mb-6">
             Harness the{" "}
             <span className="bg-gradient-to-r from-primary-400 via-emerald-400 to-teal-400 bg-clip-text text-transparent">
               Power of the Sun
