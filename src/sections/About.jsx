@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
-import aboutImg from "../assets/image-3.jpeg";
+import aboutImg from "../assets/shared-img/image-3.jpeg";
 
 const About = () => {
   return (
@@ -22,7 +22,7 @@ const About = () => {
               />
             </div>
             <div className="absolute -bottom-8 -right-8 bg-primary-600 text-white p-10 rounded-3xl hidden md:block">
-              <div className="text-4xl font-bold mb-2">2+</div>
+              <div className="text-4xl font-bold mb-2">7+</div>
               <div className="text-sm font-medium opacity-90">
                 Years of Professional
                 <br />
@@ -44,12 +44,23 @@ const About = () => {
               Leading the Charge in{" "}
               <span className="text-primary-500">Sustainable</span> Energy
             </h3>
+            <p className="text-gray-600 text-lg mb-6 leading-relaxed">
+              Usolar Janda Energy Pvt. Ltd. (Usolar) is a dynamic renewable
+              energy company incorporated in Nepal in January 2024. As a
+              sister company of Janda Devi Nepal Energy Pvt. Ltd. (JDNE),
+              Usolar leverages the deep technical expertise, established
+              project pipeline, and proven track record of JDNE to deliver
+              world-class solar energy solutions across Nepal.
+            </p>
             <p className="text-gray-600 text-lg mb-8 leading-relaxed">
-              U Solar is a renewable energy company focused on providing
-              end-to-end solar power solutions for residential, commercial, and
-              industrial clients. The company specializes in converting
-              conventional electricity systems into sustainable solar energy
-              systems, helping reduce energy costs and environmental impact.
+              The company is committed to accelerating Nepal's energy
+              transition by developing, engineering, and commissioning
+              large-scale solar PV plants, commercial and industrial (C&I)
+              rooftop solar systems, transmission infrastructure, and related
+              clean energy projects. Usolar combines cutting-edge technology
+              with local knowledge to deliver sustainable, reliable, and
+              cost-effective renewable energy solutions to industrial,
+              commercial, and institutional clients nationwide.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-4">

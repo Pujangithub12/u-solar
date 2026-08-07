@@ -79,7 +79,7 @@ const Contact = () => {
                 <div>
                   <h4 className="text-lg font-bold mb-1">Our Location</h4>
                   <p className="text-gray-600 group-hover:text-gray-900 transition-colors">
-                    8th Floor, Trade Tower, Thapathali, Kathmandu, Nepal
+                    2nd Floor, Trade Tower, Thapathali, Kathmandu, Nepal
                   </p>
                 </div>
               </div>
@@ -234,6 +234,27 @@ const Contact = () => {
                 SEND MESSAGE <Send className="w-5 h-5" />
               </button>
             </form>
+          </motion.div>
+        </div>
+
+        {/* Google Map */}
+        <div className="mt-20">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="rounded-3xl overflow-hidden shadow-lg"
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.8892641267626!2d85.3214906!3d27.7171896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb190e8e8e8e8f%3A0x8e8e8e8e8e8e8e8e!2sTrade%20Tower%2C%20Kathmandu!5e0!3m2!1sen!2snp!4v1234567890"
+              width="100%"
+              height="500"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-[500px]"
+            ></iframe>
           </motion.div>
         </div>
       </div>

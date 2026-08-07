@@ -1,20 +1,18 @@
 import React from "react";
 import Navbar from "../../components/layout/Navbar";
 import Footer from "../../components/layout/Footer";
-import Hero from "../../sections/Hero";
-import WhyChooseUs from "../../sections/WhyChooseUs";
+import Services from "../../sections/Services";
 
-const HomePage = () => {
+const ServicesPage = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <main>
-        <Hero />
-        <WhyChooseUs />
+      <main className="pt-20">
+        <Services />
       </main>
       <Footer />
     </div>
   );
 };
 
-export default HomePage;
+export default ServicesPage;

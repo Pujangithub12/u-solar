@@ -2,12 +2,12 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { CheckCircle, Sun, Wrench, ClipboardCheck, BarChart3, Hammer, HardHat, Compass } from "lucide-react";
-import img1 from "../assets/image-1.jpeg";
-import img2 from "../assets/image-2.jpeg";
-import img3 from "../assets/image-3.jpeg";
-import img4 from "../assets/image-4.jpeg";
-import img5 from "../assets/image-5.jpeg";
-import img6 from "../assets/image-6.jpeg";
+import img1 from "../../assets/shared-img/image-1.jpeg";
+import img2 from "../../assets/shared-img/image-2.jpeg";
+import img3 from "../../assets/shared-img/image-3.jpeg";
+import img4 from "../../assets/shared-img/image-4.jpeg";
+import img5 from "../../assets/shared-img/image-5.jpeg";
+import img6 from "../../assets/shared-img/image-6.jpeg";
 
 const serviceData = {
   "site-assessment": {

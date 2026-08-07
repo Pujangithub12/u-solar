@@ -1,33 +1,18 @@
 import React from "react";
 import { Facebook, Instagram, MapPin, Mail, Phone } from "lucide-react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 
 const navLinks = [
-  { name: "Home", hash: "home" },
-  { name: "About", hash: "about" },
-  { name: "Services", hash: "services" },
-  { name: "Contact", hash: "contact" },
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+  { name: "Services", path: "/services" },
+  { name: "Projects", path: "/projects" },
+  { name: "Team", path: "/team" },
+  { name: "Contact", path: "/contact" },
 ];
 
 const Footer = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  const handleNavClick = (e, hash) => {
-    e.preventDefault();
-    if (location.pathname === '/') {
-      const el = document.getElementById(hash);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      navigate('/');
-      setTimeout(() => {
-        const el = document.getElementById(hash);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
-      }, 150);
-    }
-  };
-
   return (
     <footer className="bg-gray-950 text-white pt-24 pb-12 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6">
@@ -69,13 +54,12 @@ const Footer = () => {
             <ul className="space-y-4">
               {navLinks.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={`/#${link.hash}`}
-                    onClick={(e) => handleNavClick(e, link.hash)}
+                  <Link
+                    to={link.path}
                     className="text-gray-400 hover:text-primary-500 transition-colors"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -1,20 +1,18 @@
 import React from "react";
 import Navbar from "../../components/layout/Navbar";
 import Footer from "../../components/layout/Footer";
-import Hero from "../../sections/Hero";
-import WhyChooseUs from "../../sections/WhyChooseUs";
+import Projects from "../../sections/Projects";
 
-const HomePage = () => {
+const ProjectsPage = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <main>
-        <Hero />
-        <WhyChooseUs />
+      <main className="pt-20">
+        <Projects />
       </main>
       <Footer />
     </div>
   );
 };
 
-export default HomePage;
+export default ProjectsPage;
